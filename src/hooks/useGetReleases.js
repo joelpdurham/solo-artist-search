@@ -6,7 +6,7 @@ export const useGetReleases = (id) => {
 
   useEffect(() => {
     getReleases(id)
-      .then(releases => setReleases(releases.releases))
+      .then(releases => setReleases(releases.releases));
   }, []);
 
   return { releases };

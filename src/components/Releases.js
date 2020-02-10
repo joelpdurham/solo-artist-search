@@ -7,7 +7,6 @@ import { Release } from './Release';
 export const Releases = () => {
   const { id } = useParams();
   const { releases } = useGetReleases(id);
-  console.log(releases);
 
   const releasesElements = releases.map(release => (
     <li key={release.id}>
