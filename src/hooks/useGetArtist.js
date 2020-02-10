@@ -7,7 +7,7 @@ export const useGetArtists = () => {
 
   useEffect(() => {
     getArtists(searchTerm)
-      .then(setArtists());
+      .then(artists => setArtists(artists.artists));
   }, [searchTerm]);
 
   const handleChange = ({ target }) => {

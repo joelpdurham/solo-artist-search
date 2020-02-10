@@ -1,9 +1,7 @@
 import React from 'react';
-import { useGetArtists } from '../hooks/useGetArtist';
+import PropTypes from 'prop-types';
 
-export const Search = () => {
-  const { handleChange, searchTerm } = useGetArtists();
-  
+export const Search = ({ handleChange, searchTerm }) => {
   return (
     <form>
       <input type="text" placeholder="artist" 
@@ -11,4 +9,9 @@ export const Search = () => {
         onChange={handleChange}/>
     </form>
   );
+};
+
+Search.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  searchTerm: PropTypes.string.isRequired
 };
