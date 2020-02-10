@@ -1,13 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Artist } from './Artist';
 
 export const Artists = ({ artists }) => {
-  console.log(artists);
+  const artistsElements = artists.map(artist => {
+    return (
+      <li key={artist.id} >
+        <Link to={`/${artist.id}`}>
+          <Artist name={artist.name} />
+        </Link>
+      </li>
+    );}
+  );
 
-  const test = 'hi';
-
-  return (
-    <h1>{test}</h1>
+  return (<ul>{artistsElements}</ul>
   );
 };
 

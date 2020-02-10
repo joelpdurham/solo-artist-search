@@ -4,8 +4,11 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+
 import { Search } from './Search';
 import { Artists } from './Artists';
+import { Releases } from './Releases';
+
 import { useGetArtists } from '../hooks/useGetArtist';
 
 export default function App() {
@@ -15,8 +18,9 @@ export default function App() {
     <Router>
       <Search searchTerm={searchTerm} handleChange={handleChange} />
       <Switch>
-        <Route exact path='/artists' 
+        <Route exact path='/' 
           render={() => <Artists artists={artists} isAuthed={true} />} />
+        <Route exact path='/:id' component={Releases}/>
       </Switch>
     </Router>
   );
